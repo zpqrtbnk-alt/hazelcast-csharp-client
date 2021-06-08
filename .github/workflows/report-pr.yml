@@ -1,0 +1,24 @@
+#
+# Workflow: Report PR
+#
+
+# this is a placeholder workflow in the master branch
+# actual workflow is in the 4.0.z branch for now
+# but we need workflow_run workflows do be defined in master
+
+name: Report PR
+on:
+  workflow_run:
+    workflows: [ "Build PR" ]
+    types:
+      - completed
+
+jobs:
+
+  report-pr:
+    name: Report PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do Nothing
+        shell: bash
+        run: echo "Doing Nothing"
